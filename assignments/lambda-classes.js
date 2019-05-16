@@ -74,7 +74,7 @@ const bob = new Person({
   location: "Brooklyn, NY"
 });
 
-const Carrie = new Student({
+const carrie = new Student({
   name: "Carrie",
   age: 22,
   location: "Orlando, FL",
@@ -83,7 +83,7 @@ const Carrie = new Student({
   favSubjects: "React"
 });
 
-const Ryan = new ProjectManager({
+const ryan = new ProjectManager({
   name: "Ryan",
   age: 25,
   location: "Georgia"
@@ -91,11 +91,11 @@ const Ryan = new ProjectManager({
 
 console.log(bob.speak());
 console.log(fred.demo("math"));
-console.log(fred.grade(Carrie, "computer science"));
+console.log(fred.grade(carrie, "computer science"));
 
-console.log(Carrie.listsSubjects());
-console.log(Carrie.PRAssignment("computer science"));
-console.log(Carrie.sprintChallenge("Javascript"));
+console.log(carrie.listsSubjects());
+console.log(carrie.PRAssignment("computer science"));
+console.log(carrie.sprintChallenge("Javascript"));
 
-console.log(Ryan.standUp("web20_sprint3"));
-console.log(Ryan.debugsCode(Carrie, "Math"));
+console.log(ryan.standUp("web20_sprint3"));
+console.log(ryan.debugsCode(carrie, "Math"));
