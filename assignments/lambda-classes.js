@@ -18,14 +18,14 @@ class Instructor extends Person {
     this.catchPhrase = insAttr.catchPhrase;
   }
   demo(subject) {
-    console.log(`Today we are learning about ${this.subject}`);
+    console.log(`Today we are learning about ${subject}`);
   }
   grade(student, subject) {
-    console.log(`${student.name} receives a perfect score on ${this.subject}`);
+    console.log(`${student.name} receives a perfect score on ${subject}`);
   }
 }
 
-class Student extends Instructor {
+class Student extends Person {
   constructor(stAttr) {
     super(stAttr);
     this.previousBackground = stAttr.previousBackground;
@@ -37,8 +37,24 @@ class Student extends Instructor {
   }
 
   PRAssignment(subject) {
-    console.log(
-      `${Student.name} has begun sprint challenge on ${this.subject}`
-    );
+    console.log(`${Student.name} has submitted a PR for ${subject}`);
+  }
+  sprintChallenge(subject) {
+    console.log(`${this.name} has begun sprint challenge on ${subject}`);
+  }
+}
+
+class ProjectManager extends Instructor {
+  constructor(pmAttr) {
+    super(pmAttr);
+    this.gradClassName = pmAttr.gradClassName;
+    this.favInstructor = pmAttr.favInstructor;
+  }
+  standUp(channel) {
+    `${this.name} announces to ${channel}, @channel standby times!`;
+  }
+
+  debugsCode(student, subject) {
+    `${this.name} debugs ${student}'s code on ${subject}`;
   }
 }
