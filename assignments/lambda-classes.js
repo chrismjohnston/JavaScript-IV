@@ -6,7 +6,7 @@ class Person {
     this.location = attributes.location;
   }
   speak() {
-    return `Hello my name is ${this.name}, I am from ${this.location}`;
+    console.log(`Hello my name is ${this.name}, I am from ${this.location}`);
   }
 }
 
@@ -17,5 +17,28 @@ class Instructor extends Person {
     this.favLanguage = insAttr.favLanguage;
     this.catchPhrase = insAttr.catchPhrase;
   }
-  demo(subject) {}
+  demo(subject) {
+    console.log(`Today we are learning about ${this.subject}`);
+  }
+  grade(student, subject) {
+    console.log(`${student.name} receives a perfect score on ${this.subject}`);
+  }
+}
+
+class Student extends Instructor {
+  constructor(stAttr) {
+    super(stAttr);
+    this.previousBackground = stAttr.previousBackground;
+    this.className = stAttr.className;
+    this.favSubjects = stAttr.favSubjects;
+  }
+  listsSubjects() {
+    console.log(`${this.favSubjects}`);
+  }
+
+  PRAssignment(subject) {
+    console.log(
+      `${Student.name} has begun sprint challenge on ${this.subject}`
+    );
+  }
 }
