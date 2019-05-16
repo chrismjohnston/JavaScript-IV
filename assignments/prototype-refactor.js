@@ -60,19 +60,17 @@ class CharacterStats extends GameObject {
     * should inherit takeDamage() from CharacterStats
   */
 
-function Humanoid(classAtt) {
-  CharacterStats.call(this, classAtt);
-
-  this.team = classAtt.team;
-  this.weapons = classAtt.weapons;
-  this.language = classAtt.language;
+class Humanoid extends CharacterStats {
+  constructor(classAtt) {
+    super(classAtt);
+    this.team = classAtt.team;
+    this.weapons = classAtt.weapons;
+    this.language = classAtt.language;
+  }
+  greet() {
+    return `${this.name} offers a greeting in ${this.language}.`;
+  }
 }
-
-Humanoid.prototype = Object.create(CharacterStats.prototype);
-
-Humanoid.prototype.greet = function() {
-  return `${this.name} offers a greeting in ${this.language}.`;
-};
 
 /*
  * Inheritance chain: GameObject -> CharacterStats -> Humanoid
